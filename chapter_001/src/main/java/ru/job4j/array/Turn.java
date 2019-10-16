@@ -9,7 +9,6 @@ public class Turn {
         }
         return array;
     }
-
     public int[] back(int[] array) {
         for (int index = 0; index != (array.length-1)/2; index++) {
             int temp = array[index];
