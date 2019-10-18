@@ -36,7 +36,7 @@ public class FindLoop1Test {
         int start = 2;
         int finish = 4;
         int result = FindLoop1.indexOf1(input, value, start, finish);
-        int expect = 3;
+        int expect = 3; // ячейка
         assertThat(result, is(expect));
     }
     @Test
