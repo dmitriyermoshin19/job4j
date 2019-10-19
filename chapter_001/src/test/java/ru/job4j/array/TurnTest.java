@@ -23,5 +23,3 @@ public class TurnTest {
         assertThat(result, is(expect));
     }
 }
-
-
