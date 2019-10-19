@@ -6,6 +6,7 @@ public class FindLoop1 {
         for (int index = 0; data.length != index; index++) {
             if (data[index] == el) {
                 rst = index;
+                break;
             }
         }
         return rst;
@@ -16,6 +17,7 @@ public class FindLoop1 {
         for (int index = start; finish >= index; index++) {
             if (data[index] == el) {
                 rst = index;
+                break;
             }
         }
         return rst;
