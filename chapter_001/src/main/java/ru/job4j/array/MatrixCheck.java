@@ -16,12 +16,14 @@ public class MatrixCheck {
                 // сначала ищем индекс у Х
                 if ((board[row][cell] == 'X')&&(row ==0) ) {
                     for (int i = 1;i < board.length; i++) {
-                            if (board[i][cell] == 'X') {
-                                result = true;
+                            if (board[i][cell] != 'X') {
+                                result = false;
+                                break;
                             }
                     }
-                        break;
-                } else {
+                    break;
+
+                } else if ((board[row][cell] == 'X')&&(cell ==0)){
                     for (int i = 1;i < board.length; i++) {
                             if (board[row][i] != 'X') {
                                 result = false;
@@ -30,8 +32,8 @@ public class MatrixCheck {
 
                     }
                 }
-                break;
             }
+            break;
         }
         return result;
     }
