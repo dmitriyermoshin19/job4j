@@ -18,6 +18,18 @@ public class MatrixCheckTest {
         boolean result = MatrixCheck.isWin(input);
         assertThat(result, is(true));
     }
+    @Test
+    public void whenDataMonoByTrueThenTrue1() {
+        char[][] input = {
+                {'_', '_', '_', '_', '_'},
+                {'X', 'X', 'X', 'X', 'X'},
+                {'_', '_', '_', '_', '_'},
+                {'_', '_', '_', '_', '_'},
+                {'_', '_', '_', '_', '_'},
+        };
+        boolean result = MatrixCheck.isWin(input);
+        assertThat(result, is(true));
+    }
 
     @Test
     public void whenDataNotMonoByTrueThenFalse() {

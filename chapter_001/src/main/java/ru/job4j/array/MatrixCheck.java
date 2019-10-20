@@ -3,6 +3,7 @@ package ru.job4j.array;
 public class MatrixCheck {
     public static boolean isWin(char[][] board) {
         boolean result =  true;
+
         for (int row = 0; row < board.length; row++) {
             for (int cell = 0; cell < board.length; cell++) {
                 char sign = board[row][cell];
@@ -10,30 +11,23 @@ public class MatrixCheck {
             }
             System.out.println();
         }
-                //for () { проверить последовательность.
-        for (int row = 0; row < board.length; row++) {
-            for (int cell = 0; cell < board.length; cell++) {
-                // сначала ищем индекс у Х
-                if ((board[row][cell] == 'X')&&(row ==0) ) {
-                    for (int i = 1;i < board.length; i++) {
-                            if (board[i][cell] != 'X') {
-                                result = false;
-                                break;
-                            }
+             //for () { проверить последовательность.
+        // сначала ищем индекс у Х не по катетам, а по гипотенузе
+        for (int index = 0; index < board.length; index++) {
+                if (board[index][index] == 'X') {
+                    for (int i = 0;i < board.length; i++) {
+                        // определяем столбик или строка и считаем
+                        if (board[i][index] == 'X') {
+                        } else if (board[index][i] == 'X') {
+                        } else { result = false;
+                        break;}
                     }
                     break;
-
-                } else if ((board[row][cell] == 'X')&&(cell ==0)){
-                    for (int i = 1;i < board.length; i++) {
-                            if (board[row][i] != 'X') {
-                                result = false;
-                                break;
-                            }
-
-                    }
                 }
+            if ((board[index][index] != 'X')&&(index+1 == board.length)) {
+                result = false;
+                break;
             }
-            break;
         }
         return result;
     }
