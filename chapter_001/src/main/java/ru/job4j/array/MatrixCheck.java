@@ -15,16 +15,20 @@ public class MatrixCheck {
         // сначала ищем индекс у Х не по катетам, а по гипотенузе
         for (int index = 0; index < board.length; index++) {
                 if (board[index][index] == 'X') {
-                    for (int i = 0;i < board.length; i++) {
+                    for (int i = 0; i < board.length; i++) {
                         // определяем столбик или строка и считаем
                         if (board[i][index] == 'X') {
+                            System.out.println();
                         } else if (board[index][i] == 'X') {
-                        } else { result = false;
-                        break;}
+                            System.out.println();
+                        } else {
+                            result = false;
+                            break;
+                        }
                     }
                     break;
                 }
-            if ((board[index][index] != 'X')&&(index+1 == board.length)) {
+            if ((board[index][index] != 'X') && (index + 1 == board.length)) {
                 result = false;
                 break;
             }

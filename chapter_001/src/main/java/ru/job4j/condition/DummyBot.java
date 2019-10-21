@@ -15,9 +15,9 @@ public class DummyBot {
         }
 
         public static void main(String[] args) {
-            DummyBot Bot = new DummyBot();
+            DummyBot bot = new DummyBot();
             String myquestion = "Привет, Бот.";
-            String answer = Bot.answer(myquestion);
+            String answer = bot.answer(myquestion);
             System.out.println(answer);
         }
 

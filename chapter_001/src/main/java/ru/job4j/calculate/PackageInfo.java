@@ -7,5 +7,5 @@
  */
 package ru.job4j.calculate;
 
-public class packageInfo {
+public class PackageInfo {
 }
