@@ -11,12 +11,9 @@ public class MatrixCheck {
             }
             System.out.println();
         }
-             //for () { проверить последовательность.
-        // сначала ищем индекс у Х не по катетам, а по гипотенузе
         for (int index = 0; index < board.length; index++) {
                 if (board[index][index] == 'X') {
                     for (int i = 0; i < board.length; i++) {
-                        // определяем столбик или строка и считаем
                         if (board[i][index] == 'X') {
                             System.out.println();
                         } else if (board[index][i] == 'X') {
@@ -27,8 +24,7 @@ public class MatrixCheck {
                         }
                     }
                     break;
-                }
-            if ((board[index][index] != 'X') && (index + 1 == board.length)) {
+                } else  if ((board[index][index] != 'X') && (index + 1 == board.length)) {
                 result = false;
                 break;
             }
