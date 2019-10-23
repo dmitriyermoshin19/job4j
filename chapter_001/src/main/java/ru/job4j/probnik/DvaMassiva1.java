@@ -1,4 +1,4 @@
-package ru.job4j.array;
+package ru.job4j.probnik;
 
 public class DvaMassiva1 {
     public static void main(String[] args) {
