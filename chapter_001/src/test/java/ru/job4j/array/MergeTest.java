@@ -1,10 +1,11 @@
 package ru.job4j.array;
 import org.junit.Ignore;
 import org.junit.Test;
+import ru.job4j.probnik.Merge3;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
-/*
+
 @Ignore
 public class MergeTest {
     @Test
@@ -61,4 +62,4 @@ public class MergeTest {
         );
         assertThat(result, is(expect));
     }
-} */
+}
