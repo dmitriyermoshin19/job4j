@@ -10,26 +10,26 @@ public class Merge2 {
         int[] rsl = new int[left.length + right.length];
         int i = 0;
         while (i < (left.length + right.length)) {
-            if ((r < right.length)&&(l < left.length)) {
+            if ((r < right.length) && (l < left.length)) {
                 if (left[i - l] < right[i - r]) {
                     rsl[i] = left[i - l];
-                    if ((r < right.length) ) {
+                    if ((r < right.length)) {
                         r = r + 1;
                     } else {
-                        // break;
+                         break;
                     }
                 } else {
                     rsl[i] = right[i - r];
                     if ((l < left.length) && (i > 0)) {
                         l++;
                     } else {
-                        // break;
+                         break;
                     }
                 }
-            } else if (!(r < right.length)&&((right.length + caunt) < left.length)) {
+            } else if (!(r < right.length) && ((right.length + caunt) < left.length)) {
                 rsl[i] = left[right.length + caunt];
                 caunt++;
-            } else if (!(l < left.length)&&((left.length + caunt) < right.length)) {
+            } else if (!(l < left.length) && ((left.length + caunt) < right.length)) {
                 rsl[i] = right[left.length + caunt];
                 caunt++;
             } else {

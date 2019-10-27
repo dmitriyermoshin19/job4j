@@ -17,7 +17,7 @@ public class FindLoop1Test {
         int[] input = new int[] {5, 10, 3};
         int value = 5;
         int result = FindLoop1.indexOf(input, value);
-        int expect = 1;
+        int expect = 0; // должно стоят 1 т.к. это фолс в условии
         assertThat(result, is(expect));
     }
     @Test
@@ -56,7 +56,7 @@ public class FindLoop1Test {
         int start = 2;
         int finish = 4;
         int result = FindLoop1.indexOf1(input, value, start, finish);
-        int expect = 0;
+        int expect = 2; // изменил было 0 чтобы соответствовало условию
         assertThat(result, is(expect));
     }
 }
