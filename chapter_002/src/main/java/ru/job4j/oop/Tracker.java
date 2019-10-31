@@ -1,4 +1,4 @@
-package ru.job4j;
+package ru.job4j.oop;
 import java.util.Arrays;
 
 public class Tracker {
