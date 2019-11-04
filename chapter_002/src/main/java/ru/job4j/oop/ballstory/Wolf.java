@@ -1,4 +1,4 @@
-package ru.job4j.oop.ballStory;
+package ru.job4j.oop.ballstory;
 
 public class Wolf {
     public void tryEat(Ball ball) {
