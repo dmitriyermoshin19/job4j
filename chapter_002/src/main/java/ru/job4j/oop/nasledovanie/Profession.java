@@ -5,6 +5,12 @@ public class Profession {
     private String surname;
     private String education;
     private String birthday;
+    public Profession(String name, String sur, String ed, String bir) {
+        this.name = name;
+        this.surname = sur;
+        this.education = ed;
+        this.birthday = bir;
+    }
     public String getName(String name) {
         this.name = name;
         return name;
