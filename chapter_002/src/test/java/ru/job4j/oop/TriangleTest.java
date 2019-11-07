@@ -2,6 +2,8 @@ package ru.job4j.oop;
 
 import org.junit.Assert;
 import org.junit.Test;
+import ru.job4j.oop.obiekti.Point;
+import ru.job4j.oop.obiekti.Triangle;
 
 public class TriangleTest {
     @Test
