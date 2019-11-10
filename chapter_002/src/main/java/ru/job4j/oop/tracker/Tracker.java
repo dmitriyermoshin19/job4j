@@ -41,46 +41,42 @@ public class Tracker {
         }
         return rst;
     }
-    public Item findByName(String name) {
-        Item rst = null;
-        for (int i = 0; i < position && items[i] != null; i++) {
-            if (items[i].getName().equals(name)) {
-                rst = items[i];
-                break;
-            }
-        }
-        return rst;
-    }
-    public Item replace(String id, Item item) {
-        Item rst = null;
+
+    public boolean replace(String id, Item item) {
+        boolean rst = false;
         for (int i = 0; i < position && items[i] != null; i++) {
             if (items[i].getId().equals(id)) {
                 items[i] = item;
-                rst = items[i];
+                rst = true;
                 break;
             }
         }
         return rst;
     }
-    public Item delete(String id) {
-        Item rst = null;
+
+    public Item[] findByName(String name) {
+        Item[] rst = new Item[position];
         for (int i = 0; i < position && items[i] != null; i++) {
-            if (items[i].getId().equals(id)) {
-                items[i] = null;
-                System.arraycopy(items, i, items, i + 1, position -i);
-                position--;
-                rst = items[i];
-               // System.out.println(items[i+2].getName());
-                break;
+            if (items[i].getName().equals(name)) {
+                rst[i] = this.items[i];
             }
         }
         return rst;
     }
     public Item[] findAll() {
-        Item[] result = new Item[position];
-        for (int i = 0; i != position; i++) {
-            result[i] = this.items[i];
+        return Arrays.copyOf(items, position);
+    }
+    public boolean delete(String id) {
+        boolean rst = false;
+        for (int i = 0; i < position && items[i] != null; i++) {
+            if (items[i].getId().equals(id)) {
+                items[i] = null;
+                System.arraycopy(items, i + 1, items, i, position -i);
+                position--;
+                rst = true;
+                break;
+            }
         }
-        return result;
+        return rst;
     }
 }

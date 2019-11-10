@@ -15,14 +15,7 @@ public class TrackerTest {
         Item result = tracker.findById(item.getId());
         assertThat(result.getName(), is(item.getName()));
     }
-    @Test
-    public void whenAddNewItemThenTrackerHasSameItem1() {
-        Tracker tracker = new Tracker();
-        Item item = new Item("test1");
-        tracker.add(item);
-        Item result = tracker.findByName(item.getName());
-        assertThat(result.getId(), is(item.getId()));
-    }
+
     @Test
     public void whenReplaceNameThenReturnNewName() {
         Tracker tracker = new Tracker();
@@ -34,18 +27,28 @@ public class TrackerTest {
         assertThat(tracker.findById(previous.getId()).getName(), is("test2"));
     }
     @Test
-    public void whenDeleteItemThenReturnNewName() {
+    public void findByName() {
         Tracker tracker = new Tracker();
         Item item = new Item("test1");
         tracker.add(item);
-        System.out.println(item.getName());
-        Item next = new Item("test2");
-        tracker.add(next);
-        System.out.println(next.getName());
-        Item next1 = new Item("test3");
-        tracker.add(next);
-        System.out.println(next1.getName());
-        Item result = tracker.delete(item.getId());
-        assertThat(result.getName(), is(next.getName()));
+        Item[] result = tracker.findByName(item.getName());
+        assertThat(result, is (new Item[]{item}));
+    }
+    @Test
+    public void findAll() {
+        Tracker tracker = new Tracker();
+        Item aaa = tracker.add(new Item("aaa"));
+        Item bbb = tracker.add(new Item("bbb"));
+        Item ccc = tracker.add(new Item("ccc"));
+        assertThat(tracker.findAll(), is(new Item[]{aaa, bbb, ccc}));
+    }
+    @Test
+    public void deleteItem() {
+        Tracker tracker = new Tracker();
+        Item aaa = tracker.add(new Item("aaa"));
+        Item bbb = tracker.add(new Item("bbb"));
+        Item ccc = tracker.add(new Item("ccc"));
+        tracker.delete(bbb.getId());
+        assertThat(tracker.findAll(), is(new Item[]{aaa, ccc}));
     }
 }
