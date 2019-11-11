@@ -53,6 +53,19 @@ public class Tracker {
         }
         return rst;
     }
+
+    public Item[] findByName(String name) {
+        Item[] rst = new Item[position];
+        for (int i = 0; i < position && items[i] != null; i++) {
+            if (items[i].getName().equals(name)) {
+                rst[i] = this.items[i];
+            }
+        }
+        return rst;
+    }
+    public Item[] findAll() {
+        return Arrays.copyOf(items, position);
+    }
     public boolean delete(String id) {
         boolean rst = false;
         for (int i = 0; i < position && items[i] != null; i++) {
@@ -61,23 +74,9 @@ public class Tracker {
                 System.arraycopy(items, i + 1, items, i, position -i);
                 position--;
                 rst = true;
-               // System.out.println(items[i+2].getName());
                 break;
             }
         }
         return rst;
-    }
-    public Item[] findByName(String name) {
-        Item[] rst = new Item[position];
-        for (int i = 0; i < position && items[i] != null; i++) {
-            if (items[i].getName().equals(name)) {
-                rst[i] = this.items[i];
-                break;
-            }
-        }
-        return rst;
-    }
-    public Item[] findAll() {
-        return Arrays.copyOf(items, position);
     }
 }
