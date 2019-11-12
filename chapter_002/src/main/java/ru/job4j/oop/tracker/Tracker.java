@@ -55,14 +55,16 @@ public class Tracker {
     }
 
     public Item[] findByName(String name) {
+        int caunt = 0;
         Item[] rst = new Item[position];
         for (int i = 0; i < position && items[i] != null; i++) {
             if (items[i].getName().equals(name)) {
-                rst[i] = this.items[i];
+                rst[caunt++] = this.items[i];
             }
         }
-        return rst;
+        return Arrays.copyOf(rst, caunt);
     }
+
     public Item[] findAll() {
         return Arrays.copyOf(items, position);
     }
