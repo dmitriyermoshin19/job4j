@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.oop.obiekti;
 
 public class Student {
     public void music() {
