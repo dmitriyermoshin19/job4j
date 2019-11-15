@@ -18,13 +18,13 @@ public class Matches {
             int select = Integer.valueOf(input.nextLine());
 
             if (select == 1 && caunt != 0 && select <= caunt) {
-                caunt -=1;
+                caunt -= 1;
                 System.out.println(caunt);
-            } else if (select == 2 && caunt !=0 && select <= caunt) {
-                caunt -=2;
+            } else if (select == 2 && caunt != 0 && select <= caunt) {
+                caunt -= 2;
                 System.out.println(caunt);
             } else if (select == 3 && caunt != 0 && select <= caunt) {
-                caunt -=3;
+                caunt -= 3;
                 System.out.println(caunt);
             }
         }
