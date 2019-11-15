@@ -10,7 +10,7 @@ public class StartUI {
             if (select == 0) {
                 StartUI.createItem(input, tracker);
             } else if (select == 1) {
-                StartUI.replaceItem(tracker);
+                StartUI.findAll(tracker);
             } else if (select == 2) {
             StartUI.editItem(input, tracker);
             } else if (select == 3) {
@@ -42,7 +42,7 @@ public class StartUI {
         Item item = new Item(name);
         tracker.add(item);
     }
-    public static void replaceItem(Tracker tracker) {
+    public static void findAll(Tracker tracker) {
         System.out.println("All items:");
         Item[] items = tracker.findAll();
         for (int i = 0; i < items.length; i++) {
