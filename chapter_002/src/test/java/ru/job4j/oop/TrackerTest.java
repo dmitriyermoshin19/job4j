@@ -32,7 +32,7 @@ public class TrackerTest {
         Item item = new Item("test1");
         tracker.add(item);
         Item[] result = tracker.findByName(item.getName());
-        assertThat(result, is (new Item[]{item}));
+        assertThat(result, is(new Item[]{item}));
     }
     @Test
     public void findAll() {
