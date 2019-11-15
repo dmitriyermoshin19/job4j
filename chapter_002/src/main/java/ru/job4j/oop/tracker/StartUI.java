@@ -12,7 +12,7 @@ public class StartUI {
             } else if (select == 1) {
                 StartUI.findAll(tracker);
             } else if (select == 2) {
-            StartUI.editItem(input, tracker);
+            StartUI.replaceItem(input, tracker);
             } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
@@ -49,13 +49,14 @@ public class StartUI {
             System.out.println(items[i]);
         }
     }
-    public static void editItem(Input input, Tracker tracker) {
+    public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
         System.out.print("Enter id: ");
         String id = input.askStr("");
         System.out.print("Edit name: ");
         String name = input.askStr("");
         Item item = new Item(name);
+        //item.setId(id);
         tracker.replace(id, item);
     }
     public static void deleteItem(Input input, Tracker tracker) {
