@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.oop.tracker;
 import org.junit.Test;
 import ru.job4j.oop.tracker.Item;
 import ru.job4j.oop.tracker.Tracker;
@@ -22,7 +22,7 @@ public class TrackerTest {
         Item previous = new Item("test1");
         tracker.add(previous);
         Item next = new Item("test2");
-        next.setId(previous.getId());
+        //next.setId(previous.getId());
         tracker.replace(previous.getId(), next);
         assertThat(tracker.findById(previous.getId()).getName(), is("test2"));
     }
@@ -32,7 +32,7 @@ public class TrackerTest {
         Item item = new Item("test1");
         tracker.add(item);
         Item[] result = tracker.findByName(item.getName());
-        assertThat(result, is (new Item[]{item}));
+        assertThat(result, is(new Item[]{item}));
     }
     @Test
     public void findAll() {
