@@ -8,12 +8,11 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.print("Enter id: ");
-        String id = input.askStr("");
-        System.out.print("Edit name: ");
-        String name = input.askStr("");
+        String id = input.askStr("Enter id: ");
+        String name = input.askStr("Edit name: ");
         Item item = new Item(name);
         tracker.replace(id, item);
+        System.out.print("Item edited");
         return true;
     }
 }
