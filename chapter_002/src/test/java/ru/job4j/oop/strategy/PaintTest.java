@@ -49,12 +49,13 @@ public class PaintTest {
         assertThat(
                 this.out.toString(),
                 is(
-                        new StringBuilder()
-                                .append("+" + System.lineSeparator())
-                                .append("+  +" + System.lineSeparator())
-                                .append("+     +" + System.lineSeparator())
-                                .append("++++++++")
-                                .append(System.lineSeparator())
+                        new StringJoiner(
+                                System.lineSeparator(), "",
+                                System.lineSeparator())
+                                .add("+")
+                                .add("+  +")
+                                .add("+     +")
+                                .add("++++++++")
                                 .toString()
                 )
         );
