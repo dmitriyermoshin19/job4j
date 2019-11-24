@@ -13,11 +13,11 @@ public class ValidateInputTest {
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
         ValidateInput input = new ValidateInput(
-                new StubInput(new String[] {"invalid", "1"})
+                new StubInput(new String[] {"8", "1"})
         );
-        input.askInt("Enter", 1);
+        input.askInt("Enter", 2);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
-                .add("Please enter validate data again ")
+                .add("Please select key from menu ")
                 .toString();
         assertThat(new String(mem.toByteArray()), is(expect));
         System.setOut(out);
