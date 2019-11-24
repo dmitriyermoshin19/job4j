@@ -13,6 +13,7 @@ public class ConsoleInput implements Input {
     public int askInt(String question) {
         return Integer.valueOf(askStr(question));
     }
+
     @Override
     public int askInt(String question, int max) {
         int select = askInt(question);
