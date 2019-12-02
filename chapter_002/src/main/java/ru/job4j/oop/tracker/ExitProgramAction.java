@@ -1,9 +1,13 @@
 package ru.job4j.oop.tracker;
 
-public class ExitProgramAction implements UserAction {
+public class ExitProgramAction extends BaseAction {
+
+    public ExitProgramAction(String name) {
+        super(name);
+    }
     @Override
     public String name() {
-        return "=== Exit Program ===";
+        return super.name();
     }
 
     @Override

@@ -10,14 +10,14 @@ import static org.junit.Assert.*;
 
 public class WhenCheckOutputActionTest {
     @Test
-    public void FindAllAction() {
+    public void findAllAction() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintStream def = System.out;
         System.setOut(new PrintStream(out));
         Tracker tracker = new Tracker();
         Item item = new Item("fix bug");
         tracker.add(item);
-        FindAllAction act = new FindAllAction();
+        FindAllAction act = new FindAllAction("All items:");
         act.execute(new StubInput(new String[]  {}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add(item.getId() + " " + item.getName())
@@ -26,7 +26,7 @@ public class WhenCheckOutputActionTest {
         System.setOut(def);
     }
     @Test
-    public void FindItemsByNameAction() {
+    public void findItemsByNameAction() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintStream def = System.out;
         System.setOut(new PrintStream(out));
@@ -34,7 +34,7 @@ public class WhenCheckOutputActionTest {
         Item item = new Item("fix bug");
         tracker.add(item);
         Input input = new StubInput(new String[]  {item.getName()});
-        FindItemsByNameAction act = new FindItemsByNameAction();
+        FindItemsByNameAction act = new FindItemsByNameAction("=== Find items by name ===");
         act.execute(input, tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add(item.getId() + " " + item.getName())

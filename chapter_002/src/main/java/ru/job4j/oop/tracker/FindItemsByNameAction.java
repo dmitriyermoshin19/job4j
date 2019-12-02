@@ -1,9 +1,14 @@
 package ru.job4j.oop.tracker;
 
-public class FindItemsByNameAction implements UserAction {
+public class FindItemsByNameAction extends BaseAction {
+
+    public FindItemsByNameAction(String name) {
+        super(name);
+    }
+
     @Override
     public String name() {
-        return "=== Find items by name ===";
+        return super.name();
     }
 
     @Override
