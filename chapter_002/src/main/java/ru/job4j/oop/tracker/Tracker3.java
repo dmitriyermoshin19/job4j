@@ -1,13 +1,14 @@
 package ru.job4j.oop.tracker;
 
 public class Tracker3 {
-    private static Item ITEM = new Item("Single");
+    private static Item item = new Item("Single");
     private final Tracker tracker = new Tracker();
 
-    private Tracker3() {}
+    private Tracker3() {
+    }
 
     public static Item getItem() {
-        return ITEM;
+        return item;
     }
     public Item add(Item item) {
         return tracker.add(item);

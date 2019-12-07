@@ -2,7 +2,8 @@ package ru.job4j.oop.tracker;
 
 public class Tracker4 {
     private final Tracker tracker = new Tracker();
-    private Tracker4() {}
+    private Tracker4() {
+    }
 
     public static Item getItem() {
         return Holder.INSTANCE;

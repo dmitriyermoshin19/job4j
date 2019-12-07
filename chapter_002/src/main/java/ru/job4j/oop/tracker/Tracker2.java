@@ -3,7 +3,8 @@ package ru.job4j.oop.tracker;
 public class Tracker2 {
     private static Item item;
     private final Tracker tracker = new Tracker();
-    private Tracker2() {}
+    private Tracker2() {
+    }
 
     public static Item getItem() {
         if (item == null) {
