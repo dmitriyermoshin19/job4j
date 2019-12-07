@@ -9,7 +9,7 @@ public enum Tracker1 {
     public static Tracker1 getItem() {
         return ITEM;
     }
-    // композиция методы оригинала Tracker
+    // композиция методы оригинала Tracker, синг остался без использования
     public Item add(Item item) {
         return tracker.add(item);
     }
