@@ -7,7 +7,15 @@ public class ConvertList2Array {
         int[][] array = new int[groups][cells];
         int row = 0, cell = 0;
         for (Integer num : list) {
-            array[row][cell] = num;
+            if (row < cells && cell < cells) {
+                array[row][cell] = num;
+                cell++;
+            } else {
+                cell = 0;
+                row++;
+                array[row][cell] = num;
+                cell++;
+            }
         }
         return array;
     }
