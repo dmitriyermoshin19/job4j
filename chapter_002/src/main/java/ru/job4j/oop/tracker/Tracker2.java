@@ -36,8 +36,8 @@ public class Tracker2 {
         Item item = new Item("test1");
         tracker.add(item);
         Item item1 = new Item("test2");
-        tracker.add(item);
+        tracker.add(item1);
         Item result = tracker.findById(item1.getId());
-        System.out.println(result.getName() + "   " + item1.getName());
+        System.out.println(result.getName() + "   " + item.getName());
     }
 }

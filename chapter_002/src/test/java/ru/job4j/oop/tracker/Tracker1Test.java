@@ -6,13 +6,13 @@ import static org.junit.Assert.assertThat;
 public class Tracker1Test {
 
     @Test
-    public void Tracker1EnumEagerLoading() {
+    public void tracker1EnumEagerLoading() {
         Tracker1 tracker = Tracker1.ITEM;
         Tracker1 result = tracker.getItem();
         assertThat(result, is(tracker));
     }
     @Test
-    public void Tracker2LazyLoading() {
+    public void tracker2LazyLoading() {
         Tracker tracker = new Tracker();
         Item item = new Item("test1");
         tracker.add(item);
@@ -20,13 +20,13 @@ public class Tracker1Test {
         assertThat(result.getName(), is(item.getName()));
     }
     @Test
-    public void Tracker3EagerLoading() {
+    public void tracker3EagerLoading() {
         Item item =  new Item("Single");
         Item single = Tracker3.getItem();
         assertThat(single, is(item));
     }
     @Test
-    public void Tracker4LazyLoading() {
+    public void tracker4LazyLoading() {
         Item item =  new Item("Single");
         Item single = Tracker4.getItem();
         assertThat(single, is(item));
