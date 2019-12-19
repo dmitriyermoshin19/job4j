@@ -6,7 +6,6 @@ import java.util.List;
 public class ConvertListArray2List {
     public List<Integer> toList(List<int[]> listArray) {
         List<Integer> list = new LinkedList<>();
-        int index = 0;
         for (int[] row : listArray) {
             for (int cell : row) {
                 list.add(cell);
