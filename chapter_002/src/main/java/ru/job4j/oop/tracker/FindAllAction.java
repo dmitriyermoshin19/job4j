@@ -1,5 +1,7 @@
 package ru.job4j.oop.tracker;
 
+import java.util.List;
+
 public class FindAllAction extends BaseAction {
 
     public FindAllAction(String name) {
@@ -12,9 +14,9 @@ public class FindAllAction extends BaseAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        Item[] items = tracker.findAll();
-        for (int i = 0; i < items.length; i++) {
-            System.out.println(items[i].getId() + " " + items[i].getName());
+        List<Item> items = tracker.findAll();
+        for (Item item : items) {
+            System.out.println(item.getId() + " " + item.getName());
         }
         return true;
     }

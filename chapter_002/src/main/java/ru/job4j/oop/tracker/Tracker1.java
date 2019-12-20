@@ -1,6 +1,6 @@
 package ru.job4j.oop.tracker;
 
-import java.util.Arrays;
+import java.util.List;
 
 public enum Tracker1 {
     ITEM;
@@ -19,10 +19,10 @@ public enum Tracker1 {
     public boolean replace(String id, Item item) {
         return tracker.replace(id, item);
     }
-    public Item[] findByName(String name) {
+    public List<Item> findByName(String name) {
         return tracker.findByName(name);
     }
-    public Item[] findAll() {
+    public List<Item> findAll() {
         return tracker.findAll();
     }
     public boolean delete(String id) {

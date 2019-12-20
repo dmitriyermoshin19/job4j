@@ -2,6 +2,7 @@ package ru.job4j.oop.tracker;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.List;
 import java.util.StringJoiner;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -16,7 +17,7 @@ public class StartUIInitWhenPrtMenuTest {
                 new String[]{"0"}
         );
         StubAction action = new StubAction("Stub action");
-        new StartUI().init(input, new Tracker(), new UserAction[]{action});
+        new StartUI().init(input, new Tracker(), List.of(action));
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add("Menu.")
                 .add("0. Stub action")

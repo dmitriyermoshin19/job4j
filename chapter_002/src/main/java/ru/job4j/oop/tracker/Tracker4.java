@@ -1,5 +1,7 @@
 package ru.job4j.oop.tracker;
 
+import java.util.List;
+
 public class Tracker4 {
     private final Tracker tracker = new Tracker();
     private Tracker4() {
@@ -21,10 +23,10 @@ public class Tracker4 {
     public boolean replace(String id, Item item) {
         return tracker.replace(id, item);
     }
-    public Item[] findByName(String name) {
+    public List<Item> findByName(String name) {
         return tracker.findByName(name);
     }
-    public Item[] findAll() {
+    public List<Item> findAll() {
         return tracker.findAll();
     }
     public boolean delete(String id) {

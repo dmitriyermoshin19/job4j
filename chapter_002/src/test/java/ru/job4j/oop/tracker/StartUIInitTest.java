@@ -1,6 +1,8 @@
 package ru.job4j.oop.tracker;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -11,7 +13,7 @@ public class StartUIInitTest {
                 new String[] {"0"}
         );
         StubAction action = new StubAction("Stub action");
-        new StartUI().init(input, new Tracker(), new UserAction[] {action });
+        new StartUI().init(input, new Tracker(), List.of(action));
         assertThat(action.isCall(), is(true));
     }
 }

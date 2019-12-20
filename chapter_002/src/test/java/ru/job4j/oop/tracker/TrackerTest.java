@@ -1,6 +1,8 @@
 package ru.job4j.oop.tracker;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -17,6 +19,8 @@ public class TrackerTest {
     @Test
     public void whenReplaceNameThenReturnNewName() {
         Tracker tracker = new Tracker();
+        Item prev = new Item("test");
+        tracker.add(prev);
         Item previous = new Item("test1");
         tracker.add(previous);
         Item next = new Item("test2");
@@ -29,8 +33,8 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item item = new Item("test1");
         tracker.add(item);
-        Item[] result = tracker.findByName(item.getName());
-        assertThat(result, is(new Item[]{item}));
+        List<Item> result = tracker.findByName(item.getName());
+        assertThat(result, is(List.of(item)));
     }
     @Test
     public void findAll() {
@@ -38,7 +42,7 @@ public class TrackerTest {
         Item aaa = tracker.add(new Item("aaa"));
         Item bbb = tracker.add(new Item("bbb"));
         Item ccc = tracker.add(new Item("ccc"));
-        assertThat(tracker.findAll(), is(new Item[]{aaa, bbb, ccc}));
+        assertThat(tracker.findAll(), is(List.of(aaa, bbb, ccc)));
     }
     @Test
     public void deleteItem() {
@@ -47,7 +51,7 @@ public class TrackerTest {
         Item bbb = tracker.add(new Item("bbb"));
         Item ccc = tracker.add(new Item("ccc"));
         tracker.delete(bbb.getId());
-        assertThat(tracker.findAll(), is(new Item[]{aaa, ccc}));
+        assertThat(tracker.findAll(), is(List.of(aaa, ccc)));
     }
 
 }
