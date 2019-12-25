@@ -1,10 +1,7 @@
 package ru.job4j.collection.collection;
 //import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
 import java.util.Objects;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class User implements Comparable<User> {
     private String name;
