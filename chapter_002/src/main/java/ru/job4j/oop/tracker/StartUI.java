@@ -1,24 +1,34 @@
 package ru.job4j.oop.tracker;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class StartUI {
+    private final Input input;
+    private final Tracker tracker;
+    private final Consumer<String> output;
 
-    public void init(Input input, Tracker tracker, List<UserAction> actions) {
+    public StartUI(Input input, Tracker tracker, Consumer<String> output) {
+        this.input = input;
+        this.tracker = tracker;
+        this.output = output;
+    }
+
+    public void init(Input input, Tracker tracker, List<UserAction> actions, Consumer<String> output) {
         boolean run = true;
         while (run) {
-            this.showMenu(actions);
+            this.showMenu(actions, output);
             int select = input.askInt("Select: ", actions.size());
             UserAction action = actions.get(select);
             run = action.execute(input, tracker);
         }
     }
 
-    private void showMenu(List<UserAction> actions) {
-        System.out.println("Menu.");
+    private void showMenu(List<UserAction> actions, Consumer<String> output) {
+        output.accept("Menu.");
         int index = 0;
         for (UserAction act : actions) {
-            System.out.println(index++ + ". " + act.name());
+            output.accept(index++ + ". " + act.name());
         }
     }
 
@@ -34,6 +44,6 @@ public class StartUI {
                 new FindItemsByNameAction("=== Find items by name ==="),
                 new ExitProgramAction("=== Exit Program ===")
                 );
-        new StartUI().init(validate, tracker, actions);
+        new StartUI(new StubInput(new String[]{"6"}), new Tracker(), System.out::println).init(validate, tracker, actions, System.out::println);
     }
 }
