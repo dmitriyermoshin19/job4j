@@ -11,6 +11,7 @@ public class StringCompare implements Comparator<String> {
             int rst1 = Character.compare(left.charAt(index), right.charAt(index));
             if (rst1 != 0) {
                 rst = rst1;
+                break;
             }
             index++;
         }
