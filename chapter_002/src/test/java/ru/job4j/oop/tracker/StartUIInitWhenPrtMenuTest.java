@@ -17,7 +17,7 @@ public class StartUIInitWhenPrtMenuTest {
                 new String[]{"0"}
         );
         StubAction action = new StubAction("Stub action");
-        new StartUI(new StubInput(new String[]{"6"}), new Tracker(), System.out::println).init(input, new Tracker(), List.of(action), System.out::println);
+        new StartUI().init(input, new Tracker(), List.of(action), System.out::println);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add("Menu.")
                 .add("0. Stub action")

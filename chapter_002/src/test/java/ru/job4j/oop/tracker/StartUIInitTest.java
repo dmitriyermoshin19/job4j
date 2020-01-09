@@ -13,7 +13,7 @@ public class StartUIInitTest {
                 new String[] {"0"}
         );
         StubAction action = new StubAction("Stub action");
-        new StartUI(new StubInput(new String[]{"6"}), new Tracker(), System.out::println).init(input, new Tracker(), List.of(action), System.out::println);
+        new StartUI().init(input, new Tracker(), List.of(action), System.out::println);
         assertThat(action.isCall(), is(true));
     }
 }
