@@ -2,7 +2,9 @@ package ru.job4j.lambda;
 
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -65,6 +67,19 @@ public class SchoolTest {
                 students,
                 student -> student.getScore() > 0 && student.getScore() < 50
         );
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenToMap() {
+        School school = new School();
+        School.Student student1 = new School.Student("Ivan");
+        School.Student student2 = new School.Student("Petr");
+        List<School.Student> students = List.of(student1, student2);
+        Map<String, School.Student> result = school.listToMap(students);
+        Map<String, School.Student> expected = new HashMap<>();
+        expected.put("Ivan", student1);
+        expected.put("Petr", student2);
         assertThat(result, is(expected));
     }
 }
