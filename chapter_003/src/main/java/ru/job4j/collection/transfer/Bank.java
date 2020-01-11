@@ -13,13 +13,10 @@ public class Bank {
     }
 
     public User getUser(String passport) {
-        User user = null;
-        for (User u: this.users.keySet()) {
-            if (u.getPassport().equals(passport)) {
-                user = u;
-            }
-        }
-        return user;
+        return this.users.keySet().stream().filter(
+                user -> user.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     public void addAccountToUser(String passport, Account account) {
@@ -43,15 +40,10 @@ public class Bank {
     }
 
     public Account getAccount(String passport, String requisite) {
-        Account result = null;
         List<Account> accounts = getUserAccounts(passport);
-        for (Account account : accounts) {
-            if (account.getRequisites().equals(requisite)) {
-                result = account;
-                break;
-            }
-        }
-        return result;
+        return accounts.stream().filter(
+                account -> account.getRequisites().equals(requisite))
+                .findFirst().orElse(null);
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite, String dstPassport, String dstRequisite, double amount) {
