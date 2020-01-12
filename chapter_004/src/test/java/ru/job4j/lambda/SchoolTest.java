@@ -2,6 +2,7 @@ package ru.job4j.lambda;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,6 +81,22 @@ public class SchoolTest {
         Map<String, School.Student> expected = new HashMap<>();
         expected.put("Ivan", student1);
         expected.put("Petr", student2);
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenLevelOf() {
+        School school = new School();
+        School.Student student1 = new School.Student(5);
+        School.Student student2 = new School.Student(40);
+        School.Student student3 = new School.Student(60);
+        School.Student student4 = new School.Student(65);
+        School.Student student5 = new School.Student(80);
+        School.Student student6 = new School.Student(90);
+        List<School.Student> students = Arrays.asList(
+                student6, null, student4, null, student2, null, student5, null, student1);
+        List<School.Student> expected = Arrays.asList(student6, student5);
+        List<School.Student> result = school.levelOf(students, 65);
         assertThat(result, is(expected));
     }
 }
