@@ -3,7 +3,6 @@ package ru.job4j.lambda;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -78,9 +77,8 @@ public class SchoolTest {
         School.Student student2 = new School.Student("Petr");
         List<School.Student> students = List.of(student1, student2);
         Map<String, School.Student> result = school.listToMap(students);
-        Map<String, School.Student> expected = new HashMap<>();
-        expected.put("Ivan", student1);
-        expected.put("Petr", student2);
+        Map<String, School.Student> expected = Map.of(
+                "Ivan", student1, "Petr", student2);
         assertThat(result, is(expected));
     }
 
