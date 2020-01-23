@@ -20,11 +20,9 @@ public class JaggedArrayIterator implements Iterator {
     @Override
     public Object next() {
         int result = values[row][cell];
-        if (cell == values[row].length - 1) {
+        if (cell++ == values[row].length - 1) {
             row++;
             cell = 0;
-        } else {
-            cell++;
         }
         return result;
     }
