@@ -10,14 +10,9 @@ public class Converter {
 
             @Override
             public boolean hasNext() {
-                if (!innerIt.hasNext()) {
-                    while (it.hasNext()) {
+                    while (it.hasNext() && !innerIt.hasNext()) {
                         innerIt = it.next();
-                        if (innerIt.hasNext()) {
-                            break;
-                        }
                     }
-                }
                 return innerIt.hasNext();
             }
 
