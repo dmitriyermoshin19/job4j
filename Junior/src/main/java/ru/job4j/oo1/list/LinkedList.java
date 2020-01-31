@@ -21,6 +21,18 @@ public class LinkedList<E> implements Iterable<E> {
     }
 
     /**
+     * Реализовать метод удаления первого элемент в списке.
+     */
+    public E delete() {
+        Node<E> result = this.first;
+        if (this.size != 0) {
+            this.first = result.next;
+            size--;
+        }
+        return result.data;
+    }
+
+    /**
      * Метод получения элемента по индексу.
      */
     public E get(int index) {
@@ -54,7 +66,7 @@ public class LinkedList<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new Iterator<E>() {
+        return new Iterator<>() {
 
             private int itIndex;
             private int expectedModCount = modCount;
