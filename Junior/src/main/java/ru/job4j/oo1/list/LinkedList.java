@@ -27,7 +27,7 @@ public class LinkedList<E> implements Iterable<E> {
         Node<E> result = this.first;
         if (this.size != 0) {
             this.first = result.next;
-            size--;
+            this.size--;
         }
         return result.data;
     }
