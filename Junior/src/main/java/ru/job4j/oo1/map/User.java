@@ -32,9 +32,17 @@ public class User {
                 && Objects.equals(birthday, user.birthday);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, children, birthday);
+    }
+
     public static void main(String[] args) {
         User user1 = new User("Ivan", 1, new GregorianCalendar(2000, Calendar.JANUARY, 1));
         User user2 = new User("Ivan", 1, new GregorianCalendar(2000, Calendar.JANUARY, 1));
+        System.out.println(user1.hashCode());
+        System.out.println(user2.hashCode());
+        System.out.println(user1.hashCode() == user2.hashCode());
         System.out.println(user1.equals(user2));
         Map<User, Object> map = new HashMap<>();
         map.put(user1, "first");
