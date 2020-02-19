@@ -8,6 +8,8 @@ import static org.junit.Assert.*;
 
 public class TreeTest {
     Tree<Integer> tree = new Tree<>(1);
+    Tree<Integer> biTree = new Tree<>(1);
+
     @Before
     public void setUp() {
         tree.add(1, 2);
@@ -15,6 +17,12 @@ public class TreeTest {
         tree.add(1, 4);
         tree.add(4, 5);
         tree.add(5, 6);
+        biTree.add(1, 2);
+        biTree.add(1, 3);
+        biTree.add(2, 4);
+        biTree.add(2, 5);
+        biTree.add(3, 6);
+        biTree.add(3, 7);
     }
     @Test
     public void when6ElFindLastThen6() {
@@ -30,6 +38,11 @@ public class TreeTest {
                 tree.findBy(7).isPresent(),
                 is(false)
         );
+    }
+
+    @Test
+    public void whenIsBinary() {
+        assertThat(biTree.isBinary(), is(true));
     }
 
     @Test

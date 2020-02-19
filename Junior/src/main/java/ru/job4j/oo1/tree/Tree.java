@@ -53,6 +53,29 @@ public class Tree<E extends Comparable<E>> implements SimpleTree<E> {
         return rsl;
     }
 
+    /**
+     * Метод проходит по каждому элементу дерева, и проверяет количество дочерних элементов.
+     * Дерево считается бинарным, если у каждого элемента дерева не больше 2 дочерних.
+     * @return - результат проверки.
+     * this в цикле for - это объект этого класса, в поле которого забиваются все дочерние ноды.
+     * E value в цикле for - значение из next() из iterator()
+     * значения которые были взяты из поля класса Node<E> root.
+     * затем через метод findBy(value) мы находим ноду по значению value.
+     * вытаскиваем из коробочки и сравниваем size коллекции children.
+     */
+    public boolean isBinary() {
+        boolean result = true;
+        for (E value : this) {
+            Optional<Node<E>> rsl = this.findBy(value);
+            Node<E> node = rsl.get();
+            if (node.getChildren().size() > 2) {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
     public class Node<E extends Comparable<E>> {
         private final List<Node<E>> children = new ArrayList<>();
         private final E value;
