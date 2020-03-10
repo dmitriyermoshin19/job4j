@@ -8,7 +8,7 @@ import java.util.*;
 public class EchoServer {
     public static void main(String[] args) throws IOException {
         try (ServerSocket server = new ServerSocket(9000)) {
-            Boolean flag = true;
+            boolean flag = true;
             while (flag) {
                 Socket socket = server.accept();
                 try (OutputStream out = socket.getOutputStream();
@@ -16,15 +16,16 @@ public class EchoServer {
                              new InputStreamReader(socket.getInputStream()))) {
                     String str = in.readLine();
                     Set<String> words = Set.of(str.split("[= ]+"));
-                    if (words.contains("Bye")) {
+                    if (words.contains("Hello")) {
+                        out.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
+                        out.write("Hello, dear friend.".getBytes());
+                    } else if (words.contains("Exit")) {
                         flag = false;
+                    } else {
+                        out.write("HTTP/1.1 200 OK\r\n\r\n".getBytes());
+                        out.write("What?".getBytes());
                     }
-                    while (!(str).isEmpty()) {
-                        System.out.println(str);
-                        str = in.readLine();
-                    }
-                    out.write("HTTP/1.1 200 OK\r\n\\".getBytes());
-                    out.flush();
+                    System.out.println(str);
                 }
             }
         } catch (IOException e) {
