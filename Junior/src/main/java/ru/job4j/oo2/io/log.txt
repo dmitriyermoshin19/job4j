@@ -1,0 +1,1 @@
+C:\projects\job4j\Junior\src\main\resources\app.properties
