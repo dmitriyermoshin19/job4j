@@ -2,21 +2,11 @@ package ru.job4j.oop.tracker;
 import java.util.*;
 
 
-public class Tracker {
+public class Tracker implements ITracker {
     /**
      * Коллекция для хранение заявок.
      */
     private List<Item> items = new ArrayList<>();
-
-    /**
-     * Метод реализаущий добавление заявки в хранилище
-     * @param item новая заявка
-     */
-    public Item add(Item item) {
-        item.setId(this.generateId());
-        this.items.add(item);
-        return item;
-    }
 
     /**
      * Метод генерирует уникальный ключ для заявки.
@@ -27,6 +17,19 @@ public class Tracker {
         Random rm = new Random();
         return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
+
+    /**
+     * Метод реализаущий добавление заявки в хранилище
+     * @param item новая заявка
+     */
+    @Override
+    public Item add(Item item) {
+        item.setId(this.generateId());
+        this.items.add(item);
+        return item;
+    }
+
+    @Override
     public Item findById(String id) {
         Item rst = null;
         for (Item item : this.items) {
@@ -38,6 +41,7 @@ public class Tracker {
         return rst;
     }
 
+    @Override
     public boolean replace(String id, Item item) {
         boolean rst = false;
         int i = 0;
@@ -53,6 +57,7 @@ public class Tracker {
         return rst;
     }
 
+    @Override
     public List<Item> findByName(String name) {
         List<Item> rst = new ArrayList<>();
         for (Item item : this.items) {
@@ -63,10 +68,12 @@ public class Tracker {
         return rst;
     }
 
+    @Override
     public List<Item> findAll() {
         return items;
     }
 
+    @Override
     public boolean delete(String id) {
         boolean rst = false;
         int i = 0;

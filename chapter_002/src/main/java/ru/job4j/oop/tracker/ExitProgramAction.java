@@ -11,7 +11,7 @@ public class ExitProgramAction extends BaseAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, ITracker tracker) {
         return false;
     }
 }

@@ -13,7 +13,7 @@ public class Tracker1Test {
     }
     @Test
     public void tracker2LazyLoading() {
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item item = new Item("test1");
         tracker.add(item);
         Item result = tracker.findById(item.getId());

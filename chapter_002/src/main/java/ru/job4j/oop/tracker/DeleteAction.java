@@ -11,7 +11,7 @@ public class DeleteAction extends BaseAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, ITracker tracker) {
         String id = input.askStr("Enter id: ");
         tracker.delete(id);
         System.out.print("Enter id: ");

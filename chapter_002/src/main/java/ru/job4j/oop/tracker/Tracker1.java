@@ -4,7 +4,7 @@ import java.util.List;
 
 public enum Tracker1 {
     ITEM;
-    private final Tracker tracker = new Tracker();
+    private final ITracker tracker = new Tracker();
 
     public static Tracker1 getItem() {
         return ITEM;
@@ -31,7 +31,7 @@ public enum Tracker1 {
 
     public static void main(String[] args) {
         Tracker1 tracker1 = Tracker1.ITEM;
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item item = new Item("test1");
         tracker.add(item);
         Item result = tracker.findById(item.getId());

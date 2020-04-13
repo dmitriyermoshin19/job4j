@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item item = new Item("test1");
         tracker.add(item);
         Item result = tracker.findById(item.getId());
@@ -18,7 +18,7 @@ public class TrackerTest {
 
     @Test
     public void whenReplaceNameThenReturnNewName() {
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item prev = new Item("test");
         tracker.add(prev);
         Item previous = new Item("test1");
@@ -30,7 +30,7 @@ public class TrackerTest {
     }
     @Test
     public void findByName() {
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item item = new Item("test1");
         tracker.add(item);
         List<Item> result = tracker.findByName(item.getName());
@@ -38,7 +38,7 @@ public class TrackerTest {
     }
     @Test
     public void findAll() {
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item aaa = tracker.add(new Item("aaa"));
         Item bbb = tracker.add(new Item("bbb"));
         Item ccc = tracker.add(new Item("ccc"));
@@ -46,7 +46,7 @@ public class TrackerTest {
     }
     @Test
     public void deleteItem() {
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item aaa = tracker.add(new Item("aaa"));
         Item bbb = tracker.add(new Item("bbb"));
         Item ccc = tracker.add(new Item("ccc"));

@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 
 public class StartUI {
 
-    public void init(Input input, Tracker tracker, List<UserAction> actions, Consumer<String> output) {
+    public void init(Input input, ITracker tracker, List<UserAction> actions, Consumer<String> output) {
         boolean run = true;
         while (run) {
             this.showMenu(actions, output);
@@ -25,7 +25,7 @@ public class StartUI {
 
     public static void main(String[] args) {
         Input validate = new ValidateInput(new ConsoleInput());
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         List<UserAction> actions = List.of(
                 new CreateAction("=== Create a new Item ===="),
                 new FindAllAction("All items:"),

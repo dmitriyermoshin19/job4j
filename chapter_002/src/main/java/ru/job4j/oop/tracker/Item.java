@@ -4,6 +4,15 @@ import java.util.Objects;
 public class Item {
     private String id;
     private String name;
+    private String description;
+
+    public Item(String name) {
+        this.name = name;
+    }
+    public Item(String name, String desc) {
+        this.name = name;
+        this.description = desc;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -21,10 +30,6 @@ public class Item {
         return Objects.hash(id, name);
     }
 
-    public Item(String name) {
-        this.name = name;
-    }
-
     public String getId() {
         return id;
     }
@@ -39,5 +44,13 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

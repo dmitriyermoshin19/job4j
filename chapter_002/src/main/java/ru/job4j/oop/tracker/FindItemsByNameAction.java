@@ -14,7 +14,7 @@ public class FindItemsByNameAction extends BaseAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, ITracker tracker) {
         String name = input.askStr("Enter name: ");
         List<Item> items = tracker.findByName(name);
         for (Item item : items) {

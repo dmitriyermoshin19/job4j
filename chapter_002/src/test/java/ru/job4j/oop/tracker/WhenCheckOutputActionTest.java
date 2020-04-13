@@ -14,7 +14,7 @@ public class WhenCheckOutputActionTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintStream def = System.out;
         System.setOut(new PrintStream(out));
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item item = new Item("fix bug");
         tracker.add(item);
         FindAllAction act = new FindAllAction("All items:");
@@ -30,7 +30,7 @@ public class WhenCheckOutputActionTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintStream def = System.out;
         System.setOut(new PrintStream(out));
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item item = new Item("fix bug");
         tracker.add(item);
         Input input = new StubInput(new String[]  {item.getName()});

@@ -13,7 +13,7 @@ public class FindAllAction extends BaseAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, ITracker tracker) {
         List<Item> items = tracker.findAll();
         for (Item item : items) {
             System.out.println(item.getId() + " " + item.getName());

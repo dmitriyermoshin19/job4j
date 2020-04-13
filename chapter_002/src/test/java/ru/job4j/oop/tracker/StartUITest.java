@@ -10,7 +10,7 @@ public class StartUITest {
     public void whenAddItem() {
         String[] answers = {"Fix PC"};
         Input input = new StubInput(answers);
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         new CreateAction("=== Create a new Item ====").execute(input, tracker);
         Item created = tracker.findAll().get(0);
         Item expected = new Item("Fix PC");
@@ -18,7 +18,7 @@ public class StartUITest {
     }
     @Test
     public void whenReplaceItem() {
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item item = new Item("new item");
         tracker.add(item);
         String[] answers = {item.getId(), "replaced item"};
@@ -28,7 +28,7 @@ public class StartUITest {
     }
     @Test
     public void whenDeleteItem() {
-        Tracker tracker = new Tracker();
+        ITracker tracker = new Tracker();
         Item item = new Item("new item");
         tracker.add(item);
         String[] answers = {item.getId()};
