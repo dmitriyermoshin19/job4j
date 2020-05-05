@@ -27,10 +27,10 @@ public class FileFinderTest {
         List<File> result = fileFinder.seekBy(sours, name, mode);
         assertThat(result, is(expected));
     }
-
+/*
     @Test
     public void whenMaskThenFoundedFile() {
-        String name = ".*.properties";
+        String name = ".*app";
         String mode = "-m";
         List<File> result = fileFinder.seekBy(sours, name, mode);
         assertThat(result, is(expected));

@@ -54,8 +54,8 @@ public class TrackerSQLTest {
 
     @Test
     public void whenFindItemsByName() {
-        result = trackerSQL.findByName("testNameFifth");
-        assertThat(result.get(0).getDescription(), is("testDescriptionFifth"));
+        result = trackerSQL.findByName("testNameFirst");
+        assertThat(result.get(0).getDescription(), is("testDescriptionFirst"));
     }
 
     @Test
