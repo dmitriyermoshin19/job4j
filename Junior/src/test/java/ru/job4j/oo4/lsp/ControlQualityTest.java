@@ -2,7 +2,9 @@ package ru.job4j.oo4.lsp;
 
 import org.junit.Before;
 import org.junit.Test;
-import ru.job4j.oo4.lsp.store.*;
+import ru.job4j.oo4.lsp.hranilise.ControlQuality;
+import ru.job4j.oo4.lsp.hranilise.Food;
+import ru.job4j.oo4.lsp.hranilise.store.*;
 import java.time.LocalDate;
 
 import static org.hamcrest.core.Is.is;
@@ -21,7 +23,7 @@ public class ControlQualityTest {
         wareHouse = new WareHouse();
         trash = new Trash();
         now = LocalDate.of(2020, 1, 1);
-        cq = new ControlQuality(shop, wareHouse, trash, now);
+        cq = new ControlQuality(shop, wareHouse, trash);
     }
 
     @Test
@@ -30,9 +32,9 @@ public class ControlQualityTest {
                 LocalDate.of(2020, 5, 11),
                 LocalDate.of(2019, 1, 12),
                 50);
-        Food milkFromFuture = new Food("Milk From The Future",
-                LocalDate.of(2020, 12, 31),
-                LocalDate.of(2020, 1, 10),
+        Food milkBed = new Food("Milk bed",
+                LocalDate.of(2019, 12, 31),
+                LocalDate.of(2019, 1, 10),
                 50);
         Food whiteBread = new Food("White Bread",
                 LocalDate.of(2020, 1, 3),
@@ -42,17 +44,18 @@ public class ControlQualityTest {
                 LocalDate.of(2020, 1, 5),
                 LocalDate.of(2019, 11, 10),
                 50);
-        cq.relocateTheFood(milk);
-        cq.relocateTheFood(milkFromFuture);
-        cq.relocateTheFood(whiteBread);
-        cq.relocateTheFood(wheatFlour);
+        cq.relocateTheFood(milk, cq.getExpiredRatio(milk, now));
+        cq.relocateTheFood(milkBed, cq.getExpiredRatio(milkBed, now));
+        cq.relocateTheFood(whiteBread, cq.getExpiredRatio(whiteBread, now));
+        cq.relocateTheFood(wheatFlour, cq.getExpiredRatio(wheatFlour, now));
 
-        assertTrue(shop.getListStore().contains(milk));
-        assertTrue(trash.getListStore().contains(milkFromFuture)); //product with illegal production date
-        assertTrue(wareHouse.getListStore().contains(whiteBread));
-        assertTrue(shop.getListStore().contains(wheatFlour));
+        assertTrue(shop.getListFood().contains(milk));
+        System.out.println();
+        assertTrue(trash.getListFood().contains(milkBed));
+        assertTrue(wareHouse.getListFood().contains(whiteBread));
+        assertTrue(shop.getListFood().contains(wheatFlour));
 
-        int index = shop.getListStore().indexOf(wheatFlour);
-        assertThat(shop.getListStore().get(index).getDiscount(), is(50));
+        int index = shop.getListFood().indexOf(wheatFlour);
+        assertThat(shop.getListFood().get(index).getDiscount(), is(50));
     }
 }
