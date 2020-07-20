@@ -22,4 +22,13 @@ public class Trash implements Store {
     public List<Food> getListFood() {
         return listFood;
     }
+
+    public void setNewListFood() {
+        this.listFood = new LinkedList<>();
+    }
+
+    @Override
+    public String toString() {
+        return "Trash{" + "listFood=" + listFood + '}';
+    }
 }

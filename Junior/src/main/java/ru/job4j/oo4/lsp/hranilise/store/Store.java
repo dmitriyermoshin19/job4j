@@ -14,4 +14,5 @@ public interface  Store {
 
     List<Food> getListFood();
 
+    void setNewListFood();
 }

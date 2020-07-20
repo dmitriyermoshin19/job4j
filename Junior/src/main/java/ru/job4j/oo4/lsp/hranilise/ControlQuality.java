@@ -16,6 +16,10 @@ import java.util.List;
 public class ControlQuality {
     List<Store> listStore = new LinkedList<>();
 
+    public ControlQuality() {
+
+    }
+
     public ControlQuality(Shop shop, WareHouse wareHouse, Trash trash) {
         this.listStore.add(shop);
         this.listStore.add(wareHouse);
@@ -36,12 +40,35 @@ public class ControlQuality {
     /**
      * Relocate of the product in the store
      */
-    public void relocateTheFood(Food f, Long expiredRatio) {
+    public void allocatesTheFood(Food f, Long expiredRatio) {
         for (Store store : this.listStore) {
             if (store.accept(f, expiredRatio)) {
                 store.add(f);
                 break;
             }
+        }
+    }
+
+    /**
+     * Retrieves all products from all stores.
+     */
+    private List<Food> getListFoods() {
+        List<Food> listFoods = new LinkedList<>();
+        for (Store store : this.listStore) {
+            listFoods.addAll(store.getListFood());
+            store.setNewListFood();
+        }
+        return listFoods;
+    }
+
+    /**
+     * Reallocates products across all stores.
+     */
+    public void reallocatesFoods(LocalDate now) {
+        List<Food> listFoods = this.getListFoods();
+        for (Food f : listFoods) {
+            long expiredRatio = getExpiredRatio(f, now);
+            allocatesTheFood(f, expiredRatio);
         }
     }
 }

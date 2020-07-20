@@ -22,4 +22,9 @@ public class WareHouse implements Store {
     public List<Food> getListFood() {
         return listFood;
     }
+
+    @Override
+    public void setNewListFood() {
+        this.listFood = new LinkedList<>();
+    }
 }
