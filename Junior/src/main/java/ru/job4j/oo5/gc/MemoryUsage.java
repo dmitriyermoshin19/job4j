@@ -97,27 +97,50 @@ public class MemoryUsage {
     }
 
     public static void info() {
-        int mb = 1024 * 1024;
-
-        // Getting the runtime reference from system
+        double mb = 1024 * 1024;
         Runtime runtime = Runtime.getRuntime();
-
         System.out.println("##### Heap utilization statistics [MB] #####");
-
-        // Print used memory
-        System.out.println("Used memory: "
-                + (runtime.totalMemory() - runtime.freeMemory()) / mb);
-
-        // Print free memory
-        System.out.println("Free memory: " + runtime.freeMemory() / mb);
-
-        // Print total available memory
-        System.out.println("Total available memory: " + runtime.totalMemory() / mb);
-
-        // Print Maximum available memory
-        System.out.println("Max memory: " + runtime.maxMemory() / mb);
-
-        // Print new line
+        System.out.printf("Used memory %.6f%n", (runtime.totalMemory() - runtime.freeMemory()) / mb);
+        System.out.printf("Free memory %.6f%n", runtime.freeMemory() / mb);
+        System.out.printf("Total available memory %.6f%n", runtime.totalMemory() / mb);
+        System.out.printf("Max memory %.6f%n", runtime.maxMemory() / mb);
         System.out.println();
     }
 }
+/*
+1. Используя разные ключи запуска виртуальной машины установить различные виды сборщика мусора.
+   Оценить поведения срабатывания различных типов сборщиков мусора для программы из первого урока данной модуля.
+
+   Запуск с ключами -Xmx4m -Xms4m -verbose:gc
+
+   По умолчанию запускается G1:
+   в процессе работы запустился перед стартом и в процессе работы 1 раз
+   Pause Young - 5
+   удалил много объектов
+   работал около 12 ms
+
+   Запуск SerialGC:
+   -XX:+UseSerialGC
+   в процессе работы запустился перед стартом и в процессе работы
+   Pause Young - 4
+   ничего не удалил
+   работал около 21 ms
+
+   Запуск ParallelGC:
+   -XX:+UseParallelGC
+   в процессе работы запустился перед стартом и в процессе работы 4 раза
+   Pause Young - 12, Pause Full - 2
+   удалил больше объектов, чем G1 и SerialGC
+   работал около 65 ms
+
+   Запуск CMS GC:
+   -XX:+UseConcMarkSweepGC
+Java HotSpot(TM) 64-Bit Server VM warning: Ignoring option UseConcMarkSweepGC; support was removed in 14.0
+
+
+3. Как вы считаете какой из сборщиков мусора подойдет наиболее оптимально для приложения заявок из второго модуля?
+   ParallelGC.
+
+4. Какой тип сборщика будет оптимален для серверного приложения?
+   Garbage-First - он изначально создавался для работы с большими объемами данных.
+ */
