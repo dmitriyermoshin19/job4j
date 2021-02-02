@@ -14,7 +14,9 @@
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
         <property name="hbm2ddl.auto">create</property>
 
-        <mapping class="ru.job4j.oo3hibernate.mapping.Car" />
-        <mapping class="ru.job4j.oo3hibernate.mapping.CarBrand" />
+        <mapping class="ru.job4j.oo3hibernate.mapping.tomany.Car" />
+        <mapping class="ru.job4j.oo3hibernate.mapping.tomany.CarBrand" />
+        <mapping class="ru.job4j.oo3hibernate.mapping.many.Book"/>
+        <mapping class="ru.job4j.oo3hibernate.mapping.many.Author"/>
     </session-factory>
 </hibernate-configuration>
