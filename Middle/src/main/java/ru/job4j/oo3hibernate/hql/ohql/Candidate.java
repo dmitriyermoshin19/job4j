@@ -16,11 +16,16 @@ public class Candidate {
 
     private int salary;
 
-    public static Candidate of(String name, int expirience, int salary) {
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "account_id")
+    private Account account;
+
+    public static Candidate of(String name, int expirience, int salary, Account account) {
         Candidate candidate = new Candidate();
         candidate.name = name;
         candidate.expirience = expirience;
         candidate.salary = salary;
+        candidate.account = account;
         return candidate;
     }
 
@@ -56,6 +61,14 @@ public class Candidate {
         this.salary = salary;
     }
 
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -82,6 +95,7 @@ public class Candidate {
                 + ", name='" + name + '\''
                 + ", expirience=" + expirience
                 + ", salary=" + salary
+                + ", account=" + account
                 + '}';
     }
 }

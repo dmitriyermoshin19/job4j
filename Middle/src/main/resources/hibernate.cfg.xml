@@ -17,5 +17,7 @@
         <mapping class="ru.job4j.oo3hibernate.mapping.manytoone.Marka" />
         <mapping class="ru.job4j.oo3hibernate.mapping.manytoone.Model" />
         <mapping class="ru.job4j.oo3hibernate.hql.ohql.Candidate" />
+        <mapping class="ru.job4j.oo3hibernate.hql.ohql.Account" />
+        <mapping class="ru.job4j.oo3hibernate.hql.ohql.Vacancy" />
     </session-factory>
 </hibernate-configuration>

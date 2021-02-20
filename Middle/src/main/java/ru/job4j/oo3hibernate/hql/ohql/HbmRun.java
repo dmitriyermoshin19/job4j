@@ -16,9 +16,13 @@ public class HbmRun {
             Session session = sf.openSession();
             session.beginTransaction(); /*
 
-            Candidate one = Candidate.of("Alex", 1, 80);
-            Candidate two = Candidate.of("Nikolay", 2, 100);
-            Candidate three = Candidate.of("Nikita", 5, 200);
+            Account account1 = Account.of("Alex");
+            Account account2 = Account.of("Nikolay");
+            Account account3 = Account.of("Nikita");
+
+            Candidate one = Candidate.of(account1.getUserName(), 1, 80, account1);
+            Candidate two = Candidate.of(account2.getUserName(), 2, 100, account2);
+            Candidate three = Candidate.of(account3.getUserName(), 5, 200, account3);
 
             session.save(one);
             session.save(two);
@@ -41,12 +45,23 @@ public class HbmRun {
 
             session.createQuery("delete from Candidate where id = :fId")
                     .setParameter("fId", 1)
-                    .executeUpdate();*/
+                    .executeUpdate();
 
             Query query = session.createQuery("from Candidate");
             for (Object st : query.list()) {
                 System.out.println(st);
             }
+
+            Query query = session.createQuery("select c from Candidate c where c.id = 5", Candidate.class);
+            System.out.println(query.uniqueResult());*/
+
+            Candidate rsl = session.createQuery(
+                    "select distinct c from Candidate c "
+                            + "join fetch c.account a "
+                            + "join fetch a.vacancyList "
+                            + "where c.id = :sId", Candidate.class
+            ).setParameter("sId", 4).uniqueResult();
+            System.out.println(rsl);
 
             session.getTransaction().commit();
             session.close();
