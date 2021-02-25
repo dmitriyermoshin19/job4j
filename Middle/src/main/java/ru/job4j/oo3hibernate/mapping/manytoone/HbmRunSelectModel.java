@@ -21,10 +21,10 @@ public class HbmRunSelectModel {
             Marka marka = Marka.of("LADA");
             session.persist(marka);
             Model one = Model.of("2101", marka);
-            session.persist(one);*/
+            session.persist(one);
             list = session.createQuery(
                     "select distinct m from Marka m join fetch m.models"
-            ).list();
+            ).list();*/
             session.getTransaction().commit();
             session.close();
         }  catch (Exception e) {
