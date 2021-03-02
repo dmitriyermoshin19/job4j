@@ -2,7 +2,9 @@ package ru.job4j.oo4spring.di;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Store {
     private List<String> data = new ArrayList<String>();
 
