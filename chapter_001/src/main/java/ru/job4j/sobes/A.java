@@ -11,7 +11,7 @@ public class A {
     }
 
     public void a() {
-        System.out.println("!!! a() called");
+        System.out.println("метод a()");
     }
 
     public static void as() {
