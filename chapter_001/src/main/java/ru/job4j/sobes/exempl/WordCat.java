@@ -1,4 +1,4 @@
-package ru.job4j.exempl;
+package ru.job4j.sobes.exempl;
 
 public class WordCat {
     /**

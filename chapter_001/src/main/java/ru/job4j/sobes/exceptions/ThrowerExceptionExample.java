@@ -17,7 +17,7 @@ public class ThrowerExceptionExample {
         if (new Random().nextBoolean()) {
             throw new IOException();
         } else {
-            throw new IllegalAccessException();
+            throw new IllegalAccessException("Yes - caught IllegalAccessException - Process finished with exit code 1");
         }
     }
 

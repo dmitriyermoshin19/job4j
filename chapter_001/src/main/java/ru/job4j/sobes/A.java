@@ -4,10 +4,15 @@ public class A {
     static int x = 0;
     int y = 1;
     {
-        System.out.println("A");
+        System.out.println("A" + x + y);
     }
+
+    {
+        System.out.println("A1");
+    }
+
     static {
-        System.out.println("A static block");
+        System.out.println("A static block - только статичесую переменную х = " + x);
     }
 
     public void a() {

@@ -11,7 +11,7 @@ public class CatchExample {
         public static void main(String[] args) {
             try {
                 throw new MyException("some msg"); //не выводится сама по себе на консоль
-            } catch (MyException e) {
+            } catch (MyException e) {    //если эту убрать, то поймает следующая - родитель
                 System.out.println("some msg1: " + e);
                 e.printStackTrace();
             } catch (Exception e) {
