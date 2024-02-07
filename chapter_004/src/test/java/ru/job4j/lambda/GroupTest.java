@@ -1,6 +1,8 @@
 package ru.job4j.lambda;
 
 import org.junit.Test;
+import ru.job4j.stream.sections.Group;
+import ru.job4j.stream.sections.Student;
 
 import java.util.List;
 import java.util.Map;

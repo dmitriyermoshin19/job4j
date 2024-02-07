@@ -1,4 +1,4 @@
-package ru.job4j.lambda;
+package ru.job4j.stream.collect;
 
 import java.util.Objects;
 
