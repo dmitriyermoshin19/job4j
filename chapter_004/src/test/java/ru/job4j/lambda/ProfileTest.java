@@ -1,8 +1,12 @@
 package ru.job4j.lambda;
 
 import org.junit.Test;
+import ru.job4j.stream.collect.Address;
+import ru.job4j.stream.collect.Profile;
+
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
+
 import java.util.List;
 
 public class ProfileTest {

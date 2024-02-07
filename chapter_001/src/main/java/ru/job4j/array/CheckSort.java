@@ -13,8 +13,8 @@ public class CheckSort {
     }
 
     public static void main(String[] args) {
-            int[] input = {1, 2, 3, 4, 5};
-            boolean check = check1(input);
-            System.out.println("metod otsortirovan - " + check);
+        int[] input = {1, 2, 3, 4, 5};
+        boolean check = check1(input);
+        System.out.println("metod otsortirovan - " + check);
     }
 }

@@ -5,6 +5,7 @@ public class ExitProgramAction extends BaseAction {
     public ExitProgramAction(String name) {
         super(name);
     }
+
     @Override
     public String name() {
         return super.name();

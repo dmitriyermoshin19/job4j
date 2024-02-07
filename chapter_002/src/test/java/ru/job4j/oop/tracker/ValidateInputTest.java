@@ -1,8 +1,11 @@
 package ru.job4j.oop.tracker;
+
 import org.junit.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.StringJoiner;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -13,7 +16,7 @@ public class ValidateInputTest {
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
         ValidateInput input = new ValidateInput(
-                new StubInput(new String[] {"8", "1"})
+                new StubInput(new String[]{"8", "1"})
         );
         input.askInt("Enter", 2);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())

@@ -13,7 +13,7 @@ public class NodeTest {
     Node<Integer> four = new Node<>(4);
 
     @Test
-    public void  whenHasCycleInTheEndThenTrue() {
+    public void whenHasCycleInTheEndThenTrue() {
         first.next = two;
         two.next = third;
         third.next = four;
@@ -22,7 +22,7 @@ public class NodeTest {
     }
 
     @Test
-    public void  whenHasCycleInTheMiddleThenTrue() {
+    public void whenHasCycleInTheMiddleThenTrue() {
         first.next = two;
         two.next = third;
         third.next = two;
@@ -31,7 +31,7 @@ public class NodeTest {
     }
 
     @Test
-    public void  whenHasCycleThenFalse() {
+    public void whenHasCycleThenFalse() {
         first.next = two;
         two.next = third;
         third.next = four;

@@ -7,6 +7,7 @@ public class FindAllAction extends BaseAction {
     public FindAllAction(String name) {
         super(name);
     }
+
     @Override
     public String name() {
         return super.name();

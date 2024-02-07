@@ -5,6 +5,7 @@ public class ReplaceAction extends BaseAction {
     public ReplaceAction(String name) {
         super(name);
     }
+
     @Override
     public String name() {
         return super.name();

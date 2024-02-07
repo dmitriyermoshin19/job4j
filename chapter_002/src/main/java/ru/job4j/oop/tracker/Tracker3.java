@@ -12,24 +12,31 @@ public class Tracker3 {
     public static Item getItem() {
         return item;
     }
+
     public Item add(Item item) {
         return tracker.add(item);
     }
+
     public Item findById(String id) {
         return tracker.findById(id);
     }
+
     public boolean replace(String id, Item item) {
         return tracker.replace(id, item);
     }
+
     public List<Item> findByName(String name) {
         return tracker.findByName(name);
     }
+
     public List<Item> findAll() {
         return tracker.findAll();
     }
+
     public boolean delete(String id) {
         return tracker.delete(id);
     }
+
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
         Item item = new Item("test1");

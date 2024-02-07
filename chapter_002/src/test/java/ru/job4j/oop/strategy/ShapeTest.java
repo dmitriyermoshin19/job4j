@@ -1,4 +1,5 @@
 package ru.job4j.oop.strategy;
+
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -20,6 +21,7 @@ public class ShapeTest {
                 )
         );
     }
+
     @Test
     public void whenDrawTriangle() {
         Triangle triangle = new Triangle();

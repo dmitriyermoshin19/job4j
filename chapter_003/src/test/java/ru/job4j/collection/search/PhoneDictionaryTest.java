@@ -3,6 +3,7 @@ package ru.job4j.collection.search;
 import org.junit.Test;
 
 import java.util.ArrayList;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 

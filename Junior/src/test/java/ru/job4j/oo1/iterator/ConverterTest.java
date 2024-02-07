@@ -85,6 +85,7 @@ public class ConverterTest {
         it = iteratorOfIterators.convert(its);
         assertThat(it.hasNext(), is(false));
     }
+
     @Test
     public void hasNextShouldReturnFalseInCaseOfEmptyIterator() {
         Iterator<Integer> it1 = (new ArrayList<Integer>()).iterator();

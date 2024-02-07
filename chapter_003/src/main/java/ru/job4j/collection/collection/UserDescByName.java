@@ -1,4 +1,5 @@
 package ru.job4j.collection.collection;
+
 import java.util.Comparator;
 
 public class UserDescByName implements Comparator<SortUser> {

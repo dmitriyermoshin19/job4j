@@ -23,7 +23,7 @@ public class SimpleHashMap<K, V> implements Iterable<K> {
 
     /**
      * Метод возвращает длину фактически заполненного массива с пустыми ячейками внутри него.
-     *  В счетчике this.size только увеличение.
+     * В счетчике this.size только увеличение.
      */
     public int getSizeKeys() {
         return this.size;
@@ -54,7 +54,7 @@ public class SimpleHashMap<K, V> implements Iterable<K> {
     private void increaseTable() {
         if (this.getSizeKeys() == this.table.length) {
             this.tableLength *= 2;
-            Node[] newContainer =  new Node[this.tableLength];
+            Node[] newContainer = new Node[this.tableLength];
             for (Node<K, V> node : this.table) {
                 if (node != null) {
                     int index = this.getIndex(node.key);
@@ -75,7 +75,7 @@ public class SimpleHashMap<K, V> implements Iterable<K> {
     public boolean checkKey(K key) {
         var result = false;
         if (this.table[this.getIndex(key)] != null) {
-           result = this.table[this.getIndex(key)].getKey().equals(key);
+            result = this.table[this.getIndex(key)].getKey().equals(key);
         }
         return result;
     }
@@ -98,6 +98,7 @@ public class SimpleHashMap<K, V> implements Iterable<K> {
 
     /**
      * Достаем из таблицы ноду по ключу и из нее достаем значение.
+     *
      * @param key
      * @return V value.
      */
@@ -182,7 +183,7 @@ public class SimpleHashMap<K, V> implements Iterable<K> {
                     throw new NoSuchElementException();
                 }
                 return (V) table[indexIt++].getValue();
-             }
+            }
         };
     }
 }

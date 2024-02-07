@@ -7,8 +7,8 @@ public class DvaMassiva2 {
         for (int i = 0; i < a.length; i++) {
             for (int i1 = 0; i1 < b.length; i1++) {
                 if (a[i] == b[i1]) {
-                        System.out.println(a[i]);
-                        break;
+                    System.out.println(a[i]);
+                    break;
                 }
             }
         }

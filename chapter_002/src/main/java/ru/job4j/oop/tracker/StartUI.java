@@ -34,7 +34,7 @@ public class StartUI {
                 new FindByIdAction("=== Find item by Id ==="),
                 new FindItemsByNameAction("=== Find items by name ==="),
                 new ExitProgramAction("=== Exit Program ===")
-                );
+        );
         new StartUI().init(validate, tracker, actions, System.out::println);
     }
 }

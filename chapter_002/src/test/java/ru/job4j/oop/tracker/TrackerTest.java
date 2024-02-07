@@ -1,4 +1,5 @@
 package ru.job4j.oop.tracker;
+
 import org.junit.Test;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class TrackerTest {
         tracker.replace(previous.getId(), next);
         assertThat(tracker.findById(previous.getId()).getName(), is("test2"));
     }
+
     @Test
     public void findByName() {
         ITracker tracker = new Tracker();
@@ -36,6 +38,7 @@ public class TrackerTest {
         List<Item> result = tracker.findByName(item.getName());
         assertThat(result, is(List.of(item)));
     }
+
     @Test
     public void findAll() {
         ITracker tracker = new Tracker();
@@ -44,6 +47,7 @@ public class TrackerTest {
         Item ccc = tracker.add(new Item("ccc"));
         assertThat(tracker.findAll(), is(List.of(aaa, bbb, ccc)));
     }
+
     @Test
     public void deleteItem() {
         ITracker tracker = new Tracker();

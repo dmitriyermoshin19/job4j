@@ -14,6 +14,7 @@ public class DvaMassiva {
         }
         return chisla;
     }
+
     public static void main(String[] args) {
         int[] a = {8, 4, 1, 0, 3};
         int[] b = {1, 2, 5, 9, 4, 0};
@@ -24,13 +25,13 @@ public class DvaMassiva {
         }
     }
     /**
-    public static void main(String[] args) {
-        int[] a = {8, 4, 1, 0, 3};
-        int[] b = {1, 2, 5, 9, 4, 0};
-        int[] v = odinakovieChisla(a, b);
-        System.out.println();
-        for (int g = 0; g < v.length; g++) {
-            System.out.print(v[g] + "4 1 0 - ");
-        }
-    }*/
+     public static void main(String[] args) {
+     int[] a = {8, 4, 1, 0, 3};
+     int[] b = {1, 2, 5, 9, 4, 0};
+     int[] v = odinakovieChisla(a, b);
+     System.out.println();
+     for (int g = 0; g < v.length; g++) {
+     System.out.print(v[g] + "4 1 0 - ");
+     }
+     }*/
 }

@@ -1,4 +1,5 @@
 package ru.job4j.oop.obiekti;
+
 import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;
 
@@ -11,17 +12,21 @@ public class Point1 {
         this.x = first;
         this.y = second;
     }
+
     public Point1(int first, int second, int third) {
         this.x = first;
         this.y = second;
         this.z = third;
     }
+
     public double distance(Point1 that) {
         return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2));
     }
+
     public double distance3d(Point1 that) {
         return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2) + pow(this.z - that.z, 2));
     }
+
     public static void main(String[] args) {
         Point1 a = new Point1(0, 0, 4);
         Point1 b = new Point1(0, 2, 1);

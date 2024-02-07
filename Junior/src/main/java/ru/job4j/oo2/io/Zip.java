@@ -13,8 +13,9 @@ public class Zip {
     /**
      * Метод осуществляет поиск нужных нам файлов, которые потом будем архивировать,
      * используя метод files класса Search с переопределением Predicate для исключаемых файлов
+     *
      * @param root путь с которого необходимо начать поиск файлов
-     * @param ext файлы которые необходимо исключить
+     * @param ext  файлы которые необходимо исключить
      * @return Список файлов
      */
     public static List<File> seekBy(String root, List<String> ext) {
@@ -24,8 +25,9 @@ public class Zip {
 
     /**
      * Метод позволяет получить архив в формате Zip
+     *
      * @param sources Список исходных файлов для архивации
-     * @param target Файл после упаковки в формате zip
+     * @param target  Файл после упаковки в формате zip
      */
     public static void pack(List<File> sources, File target) {
         try (ZipOutputStream zip = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(target)))) {
@@ -43,6 +45,7 @@ public class Zip {
     /**
      * в настройках Run-Edit-Program arguments записываем строку для запуска программы:
      * -d C:\projects\job4j\Junior\ -e xml -e iml -o project1.zip
+     *
      * @param args массив аргументов: -d C:\projects\job4j\Junior\ -e xml -o project.zip
      */
     public static void main(String[] args) {

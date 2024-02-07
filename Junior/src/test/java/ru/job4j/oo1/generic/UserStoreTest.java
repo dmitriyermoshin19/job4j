@@ -3,6 +3,7 @@ package ru.job4j.oo1.generic;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
 
 public class UserStoreTest {

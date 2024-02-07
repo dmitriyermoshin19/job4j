@@ -1,4 +1,5 @@
 package ru.job4j.oo1.map;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,7 @@ public class Analize {
             this.name = name;
         }
     }
+
     public static class Info {
         int added;
         int changed;

@@ -1,4 +1,5 @@
 package ru.job4j.collection.collection;
+
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.greaterThan;

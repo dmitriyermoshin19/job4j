@@ -10,14 +10,17 @@ public class Triangle {
         this.second = bp;
         this.third = cp;
     }
+
     public double period(double a, double b, double c) {
         double per = (a + b + c) / 2;
         return per;
     }
+
     private boolean exist(double a, double c, double b) {
-        boolean result = a + b > c  && a + c > b  && b + c > a;
+        boolean result = a + b > c && a + c > b && b + c > a;
         return result;
     }
+
     public double area() {
         double rsl = -1;
         double a = first.distance(second);

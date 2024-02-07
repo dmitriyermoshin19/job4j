@@ -18,8 +18,9 @@ public class SimpleSetTest {
         set.add(2);
         set.add(3);
     }
+
     @Test
-    public void  whenIncreaseSize() {
+    public void whenIncreaseSize() {
         assertThat(set.add(4), is(true));
         assertThat(set.add(5), is(true));
         assertThat(set.add(1), is(false));

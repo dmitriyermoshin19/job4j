@@ -1,4 +1,5 @@
 package ru.job4j.oop.tracker;
+
 import java.util.*;
 
 
@@ -11,6 +12,7 @@ public class Tracker implements ITracker {
     /**
      * Метод генерирует уникальный ключ для заявки.
      * Так как у заявки нет уникальности полей, имени и описание. Для идентификации нам нужен уникальный ключ.
+     *
      * @return Уникальный ключ.
      */
     private String generateId() {
@@ -20,6 +22,7 @@ public class Tracker implements ITracker {
 
     /**
      * Метод реализаущий добавление заявки в хранилище
+     *
      * @param item новая заявка
      */
     @Override

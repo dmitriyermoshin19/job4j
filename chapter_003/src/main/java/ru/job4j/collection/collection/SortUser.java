@@ -21,6 +21,7 @@ public class SortUser {
     public int getPriority() {
         return priority;
     }
+
     @Override
     public String toString() {
         return "Job{" + "name='" + name + '\'' + ", priority=" + priority + '}';

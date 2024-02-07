@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 public class Search {
 
     /**
-     * @param parent - это путь до каталога, с которого нужно осуществлять поиск.
+     * @param parent    - это путь до каталога, с которого нужно осуществлять поиск.
      * @param predicate - это расширения файлов, которые мы хотим получить.
      * @return List<File> подходящих хайлов.
      */

@@ -1,4 +1,5 @@
 package ru.job4j.oop.tracker;
+
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -18,13 +19,14 @@ public class WhenCheckOutputActionTest {
         Item item = new Item("fix bug");
         tracker.add(item);
         FindAllAction act = new FindAllAction("All items:");
-        act.execute(new StubInput(new String[]  {}), tracker);
+        act.execute(new StubInput(new String[]{}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add(item.getId() + " " + item.getName())
                 .toString();
         assertThat(new String(out.toByteArray()), is(expect));
         System.setOut(def);
     }
+
     @Test
     public void findItemsByNameAction() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -33,7 +35,7 @@ public class WhenCheckOutputActionTest {
         ITracker tracker = new Tracker();
         Item item = new Item("fix bug");
         tracker.add(item);
-        Input input = new StubInput(new String[]  {item.getName()});
+        Input input = new StubInput(new String[]{item.getName()});
         FindItemsByNameAction act = new FindItemsByNameAction("=== Find items by name ===");
         act.execute(input, tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())

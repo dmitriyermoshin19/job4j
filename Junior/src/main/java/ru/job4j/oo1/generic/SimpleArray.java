@@ -16,7 +16,7 @@ public class SimpleArray<T> implements Iterable<T> {
     }
 
     public void set(int position, T model) {
-            this.array[position] = model;
+        this.array[position] = model;
     }
 
     public void remove(int position) {

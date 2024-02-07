@@ -16,6 +16,7 @@ public class StartUITest {
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
     }
+
     @Test
     public void whenReplaceItem() {
         ITracker tracker = new Tracker();
@@ -26,6 +27,7 @@ public class StartUITest {
         Item replaced = tracker.findById(item.getId());
         assertThat(replaced.getName(), is("replaced item"));
     }
+
     @Test
     public void whenDeleteItem() {
         ITracker tracker = new Tracker();

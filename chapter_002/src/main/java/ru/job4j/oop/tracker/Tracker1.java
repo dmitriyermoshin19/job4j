@@ -9,22 +9,28 @@ public enum Tracker1 {
     public static Tracker1 getItem() {
         return ITEM;
     }
+
     // композиция методы оригинала Tracker, синг остался без использования
     public Item add(Item item) {
         return tracker.add(item);
     }
+
     public Item findById(String id) {
         return tracker.findById(id);
     }
+
     public boolean replace(String id, Item item) {
         return tracker.replace(id, item);
     }
+
     public List<Item> findByName(String name) {
         return tracker.findByName(name);
     }
+
     public List<Item> findAll() {
         return tracker.findAll();
     }
+
     public boolean delete(String id) {
         return tracker.delete(id);
     }

@@ -56,8 +56,8 @@ public class Shop {
         System.out.println("Метод delete - удаляем значение из " + in + " ячейки и смещаем влево");
         products[in] = null;
         for (int i = in; i + 1 < products.length; i++) {
-           // if (i + 1 < products.length) {
-                products[i] = products[i + 1];
+            // if (i + 1 < products.length) {
+            products[i] = products[i + 1];
             //}
         }
         for (int i = 0; i < products.length; i++) {

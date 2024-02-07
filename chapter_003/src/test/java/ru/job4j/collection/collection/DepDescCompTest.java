@@ -1,4 +1,5 @@
 package ru.job4j.collection.collection;
+
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -17,6 +18,7 @@ public class DepDescCompTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void checkDepDescComp() {
         List<String> deps = Arrays.asList("K1/SK1", "K1/SK2", "K1/SK1/SSK1", "K1/SK1/SSK2", "K2/SK1/SSK1", "K2/SK1/SSK2");

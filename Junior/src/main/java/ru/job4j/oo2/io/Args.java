@@ -44,6 +44,7 @@ public class Args {
 
     /**
      * Возвращает путь к директории которую нужно архивировать.
+     *
      * @return - путь.
      */
     public String getDirectory() {
@@ -52,6 +53,7 @@ public class Args {
 
     /**
      * Возвращает расширение файлов которые не нужно архивировать.
+     *
      * @return - расширение файлов.
      */
     public List<String> getExclude() {
@@ -60,6 +62,7 @@ public class Args {
 
     /**
      * Возвращает название архива на выходе.
+     *
      * @return название архива.
      */
     public String getOutput() {

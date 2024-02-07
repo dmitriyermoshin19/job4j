@@ -1,4 +1,5 @@
 package ru.job4j.oo2.io;
+
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;

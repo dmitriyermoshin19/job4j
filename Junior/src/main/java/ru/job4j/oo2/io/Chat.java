@@ -10,7 +10,7 @@ public class Chat {
     /**
      * Constructor.
      *
-     * @param input - путь к файлу с ответами бота.
+     * @param input  - путь к файлу с ответами бота.
      * @param output - путь к файлу с записью разговора.
      */
     public Chat(String input, String output) {
@@ -80,8 +80,9 @@ public class Chat {
 
     /**
      * метод записывает коллекцию разговора в текстовый файл.
+     *
      * @param target - путь к текстовому файлу.
-     * @param log - коллекция с разговором.
+     * @param log    - коллекция с разговором.
      */
     private void writeLog(String target, List<String> log) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(target))) {

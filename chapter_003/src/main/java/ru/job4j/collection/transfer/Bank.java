@@ -1,4 +1,5 @@
 package ru.job4j.collection.transfer;
+
 import java.util.*;
 
 public class Bank {
@@ -47,20 +48,20 @@ public class Bank {
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite, String dstPassport, String dstRequisite, double amount) {
-            boolean success = false;
-            Account srcAccount = this.getAccount(srcPassport, srcRequisite);
-            Account dstAccount = this.getAccount(dstPassport, dstRequisite);
-            if (srcAccount != null && dstAccount != null) {
-                double srcValue = srcAccount.getValue();
-                double dstValue = dstAccount.getValue();
-                if (amount > 0 && srcValue >= amount) {
-                    srcValue -= amount;
-                    srcAccount.setValue(srcValue);
-                    dstValue += amount;
-                    dstAccount.setValue(dstValue);
-                    success = true;
-                }
+        boolean success = false;
+        Account srcAccount = this.getAccount(srcPassport, srcRequisite);
+        Account dstAccount = this.getAccount(dstPassport, dstRequisite);
+        if (srcAccount != null && dstAccount != null) {
+            double srcValue = srcAccount.getValue();
+            double dstValue = dstAccount.getValue();
+            if (amount > 0 && srcValue >= amount) {
+                srcValue -= amount;
+                srcAccount.setValue(srcValue);
+                dstValue += amount;
+                dstAccount.setValue(dstValue);
+                success = true;
             }
+        }
         return success;
     }
 

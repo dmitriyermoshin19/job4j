@@ -11,6 +11,7 @@ public class Calculator {
             media.accept(op.apply(value, index));
         }
     }
+
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         calc.multiple(

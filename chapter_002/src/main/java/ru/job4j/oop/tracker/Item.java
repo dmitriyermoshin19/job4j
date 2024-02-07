@@ -1,4 +1,5 @@
 package ru.job4j.oop.tracker;
+
 import java.util.Objects;
 
 public class Item {
@@ -9,6 +10,7 @@ public class Item {
     public Item(String name) {
         this.name = name;
     }
+
     public Item(String name, String desc) {
         this.name = name;
         this.description = desc;
@@ -25,6 +27,7 @@ public class Item {
         Item item = (Item) o;
         return Objects.equals(id, item.id) && Objects.equals(name, item.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);

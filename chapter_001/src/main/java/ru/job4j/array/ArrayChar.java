@@ -5,10 +5,10 @@ public class ArrayChar {
         boolean result = false;
         for (int index = 0; pref.length > index; index++) {
             if (word[index] != pref[index]) {
-              result = false;
+                result = false;
                 break;
             } else {
-                 result = true;
+                result = true;
             }
         }
         return result;

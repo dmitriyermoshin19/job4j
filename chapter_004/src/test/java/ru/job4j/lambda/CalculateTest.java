@@ -16,6 +16,7 @@ public class CalculateTest {
         List<Double> expected = Arrays.asList(11D, 13D, 15D);
         assertThat(result, is(expected));
     }
+
     @Test
     public void whenKvadratFunctionThenKvadratResults() {
         Calculate function = new Calculate();
@@ -23,6 +24,7 @@ public class CalculateTest {
         List<Double> expected = Arrays.asList(8D, 18D, 32D);
         assertThat(result, is(expected));
     }
+
     @Test
     public void whenLogFunctionThenLogResults() {
         Calculate function = new Calculate();

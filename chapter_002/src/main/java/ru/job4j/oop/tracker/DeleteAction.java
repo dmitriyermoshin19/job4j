@@ -5,6 +5,7 @@ public class DeleteAction extends BaseAction {
     public DeleteAction(String name) {
         super(name);
     }
+
     @Override
     public String name() {
         return super.name();

@@ -14,6 +14,6 @@ public class TriangleTest {
         Triangle tri = new Triangle(a, b, c);
         double out = tri.area();
         double expected = 1.9999999999999993;
-        Assert.assertEquals(expected, out,  0.01);
+        Assert.assertEquals(expected, out, 0.01);
     }
 }

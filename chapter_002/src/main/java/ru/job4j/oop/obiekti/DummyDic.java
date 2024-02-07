@@ -5,6 +5,7 @@ public class DummyDic {
         String slovo = "Неизвестное слово - " + eng;
         return slovo;
     }
+
     public static void main(String[] args) {
         DummyDic dic = new DummyDic();
         String say = "bark";

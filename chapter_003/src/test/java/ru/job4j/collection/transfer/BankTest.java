@@ -1,6 +1,7 @@
 package ru.job4j.collection.transfer;
 
 import org.junit.Test;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
@@ -15,6 +16,7 @@ public class BankTest {
         boolean result = bank.transferMoney("1", "11", "2", "22", 10);
         assertThat(result, is(true));
     }
+
     @Test
     public void transferMoneyFalse() {
         Bank bank = new Bank();

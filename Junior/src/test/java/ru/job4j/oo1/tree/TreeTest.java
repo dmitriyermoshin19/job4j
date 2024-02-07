@@ -24,6 +24,7 @@ public class TreeTest {
         biTree.add(3, 6);
         biTree.add(3, 7);
     }
+
     @Test
     public void when6ElFindLastThen6() {
         assertThat(

@@ -14,6 +14,6 @@ public class DepDescComp implements Comparator<String> {
                 break;
             }
         }
-            return result;
+        return result;
     }
 }

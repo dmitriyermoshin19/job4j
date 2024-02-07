@@ -18,6 +18,7 @@ public class TrackerSQL implements ITracker, AutoCloseable {
 
     /**
      * Метод создает подключение к базе данных по config.
+     *
      * @return результат подключения для теста.
      */
     public boolean init() {

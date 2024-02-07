@@ -1,6 +1,7 @@
 package ru.job4j.lambda;
 
 import org.junit.Test;
+import ru.job4j.stream.School;
 
 import java.util.Arrays;
 import java.util.List;

@@ -9,8 +9,8 @@ public class SqMax {
                     result = first;
                 }
             } else if (third > forth) {
-                    result = third;
-            } else  {
+                result = third;
+            } else {
                 result = forth;
             }
         } else if (second > third) {
@@ -19,7 +19,7 @@ public class SqMax {
             }
         } else if (third > forth) {
             result = third;
-        } else  {
+        } else {
             result = forth;
         }
         return result;

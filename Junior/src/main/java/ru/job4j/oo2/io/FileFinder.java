@@ -7,6 +7,7 @@ public class FileFinder {
 
     /**
      * Проверка на соответствие файла условию
+     *
      * @param file - проверяемый файл
      * @param name - имя искомого файла, маска или регулярное выражение для поиска
      * @param mode - параметр поиска
@@ -22,9 +23,10 @@ public class FileFinder {
 
     /**
      * Метод поиска файлов в заданой директории
+     *
      * @param sours - директория поиска
-     * @param name - имя искомого файла, маска или регулярное выражение для поиска
-     * @param mode - параметр поиска
+     * @param name  - имя искомого файла, маска или регулярное выражение для поиска
+     * @param mode  - параметр поиска
      * @return - коллекция найденных файлов
      */
     public List<File> seekBy(String sours, String name, String mode) {
@@ -42,6 +44,7 @@ public class FileFinder {
 
     /**
      * Запись результата в лог
+     *
      * @param source - найденные файлы
      * @param target - лог-файл
      */
@@ -95,7 +98,7 @@ public class FileFinder {
 
         public Args(String[] args) {
             int i = 0;
-            while  (i < args.length) {
+            while (i < args.length) {
                 switch (args[i]) {
                     case ("-f"):
                         mode = "-f";

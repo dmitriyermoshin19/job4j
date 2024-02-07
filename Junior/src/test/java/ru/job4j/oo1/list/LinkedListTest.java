@@ -1,4 +1,5 @@
 package ru.job4j.oo1.list;
+
 import org.junit.Before;
 import org.junit.Test;
 

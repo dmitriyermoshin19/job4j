@@ -1,6 +1,7 @@
 package ru.job4j.oop.tracker;
 
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -24,6 +25,7 @@ public class SortByNameTest {
         List<Item> expected = List.of(item1, item2, item3, item4);
         assertThat(expected, is(items));
     }
+
     @Test
     public void comparatorDecrease() {
         List<Item> items = new ArrayList<>();

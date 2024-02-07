@@ -1,4 +1,5 @@
 package ru.job4j.collection.collection;
+
 import java.util.List;
 
 public class ConvertList2Array {
