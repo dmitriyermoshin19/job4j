@@ -3,10 +3,44 @@
 
 # job4j  *
 
-Объединение зафиксированных изменений
+## Учебный репозиторий курса job4j
 
-Задание объединить 2 коммита
-В курсе производилась работа с веткамы git
-Создание ветки из IDEA
+#### уровень Стажер
+- Java Core
+- ООП
+- Collections
+- Lambda, StreamAPI
+- Maven, jUnit, Git, IntelliJ Idea, Сheckstyle, JaCoCo, Travic CI
+- Шаблоны проектирования
 
-hotfix_3 
+#### уровень Junior
+- Коллекции Pro
+- Ввод-вывод IO/NIO, Socket
+- PostgreSQL, JDBC
+- ООД, GC
+  
+#### уровень Middle
+- Многопоточность
+- Клиент-серверное приложение
+- Hibernate
+- Spring
+---
+## Реализованные проекты
+* Шахматы на базе JavaFX.
+* Трекер заявок.
+* Крестики нолики на базе JavaFX.
+* Консольный чат.
+* Бот Сервер-Клиент.
+
+- job4j_grabber
+- job4j_pooh
+- job4j_dreamjob
+- job4j_cinema
+- job4j_carsale
+- job4j_car_accident
+- job4j_todo
+- job4j_forum
+- job4j_rest
+- job4j_chat
+- weather_reactive
+- job4j_url_shortcut
