@@ -12,6 +12,11 @@ public class Employee {
     private LocalDate fired;
     private double salary;
 
+    public Employee(String name, LocalDate hired) {
+        this.name = name;
+        this.hired = hired;
+    }
+
     public Employee(String name, LocalDate hired, LocalDate fired, double salary) {
         this.name = name;
         this.hired = hired;
